@@ -1,6 +1,6 @@
 package org.example.sandbox.unittests;
 
-
+0
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
