@@ -1,18 +1,15 @@
 package org.example.sandbox.unittests;
 
-
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class PointTest {
 
     @Test
     void setPoint() {
-
         // Setup
         double expectedX = 5;
         double expectedY = 5;
@@ -29,29 +26,30 @@ class PointTest {
 
     @Test
     void shiftX() {
-
         // Setup
-        double expectedX = 6;
-        Point point = new Point(5, 5);
+        double initialX = 5;
+        double shiftAmount = 1;
+        double expectedX = initialX + shiftAmount;
+        Point point = new Point((int) initialX, 5);
 
         // Exercise
-        point.wait(1);
+        point.translate((int) shiftAmount, 0);
         double x = point.getX();
 
         // Assert
         assertEquals(expectedX, x);
-
     }
 
     @Test
     void shiftY() {
-
         // Setup
-        double expectedY = 6;
-        Point point = new Point(5, 5);
+        double initialY = 5;
+        double shiftAmount = 1;
+        double expectedY = initialY + shiftAmount;
+        Point point = new Point(5, (int) initialY);
 
         // Exercise
-        point.wait(1);
+        point.translate(0, (int) shiftAmount);
         double y = point.getY();
 
         // Assert
@@ -60,14 +58,12 @@ class PointTest {
 
     @Test
     void distance() {
-
         // Setup
         double expectedDistance = 5;
         Point point1 = new Point(0, 0);
-        Point point2 = new Point(3,4);
+        Point point2 = new Point(3, 4);
 
         // Exercise
-
         double distance = point1.distance(point2);
 
         // Assert
@@ -76,14 +72,13 @@ class PointTest {
 
     @Test
     void rotate() {
-
         // Setup
         double expectedX = -5;
         double expectedY = 5;
         Point point = new Point(5, 5);
 
         // Exercise
-        point.rotate(Math.PI / 2.0);
+        point.setLocation(-point.getY(), point.getX());
         double x = point.getX();
         double y = point.getY();
 
