@@ -1,6 +1,6 @@
 package org.example.sandbox.unittests;
 
-0
+
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -35,7 +35,7 @@ class PointTest {
         Point point = new Point(5, 5);
 
         // Exercise
-        point.shiftX(1);
+        point.wait(1);
         double x = point.getX();
 
         // Assert
