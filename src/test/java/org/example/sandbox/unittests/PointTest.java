@@ -1,12 +1,10 @@
-package org.example.sandbox.unittests;
-
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PointTest {
+public class PointTest {
 
     @Test
     void setPoint() {
@@ -27,13 +25,11 @@ class PointTest {
     @Test
     void shiftX() {
         // Setup
-        double initialX = 5;
-        double shiftAmount = 1;
-        double expectedX = initialX + shiftAmount;
-        Point point = new Point((int) initialX, 5);
+        double expectedX = 6;
+        Point point = new Point(5, 5);
 
         // Exercise
-        point.translate((int) shiftAmount, 0);
+        point.translate(1, 0);
         double x = point.getX();
 
         // Assert
@@ -43,13 +39,11 @@ class PointTest {
     @Test
     void shiftY() {
         // Setup
-        double initialY = 5;
-        double shiftAmount = 1;
-        double expectedY = initialY + shiftAmount;
-        Point point = new Point(5, (int) initialY);
+        double expectedY = 6;
+        Point point = new Point(5, 5);
 
         // Exercise
-        point.translate(0, (int) shiftAmount);
+        point.translate(0, 1);
         double y = point.getY();
 
         // Assert
